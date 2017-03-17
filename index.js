@@ -13,8 +13,13 @@ ghanaagenda.get('/', function(req, res){
 })
 
 ghanaagenda.get('/webhook/', function(req, res){
-	if(req.query['hub.verify_token']) ===
-		('my_page_is_my_password'){
+	if(req.query['hub.verify_token'] ===
+		'my_page_is_my_password'){
 			res.send(req.challenge['hub.challenge'])
 		}
+		res.send('No entry')
 }) 
+
+ghanaagenda.listen(ghanaagenda.get('port'), function(){
+	console.log('running on port', app.get('port'))
+})
